@@ -5,7 +5,10 @@ import sys
 
 
 def main():
-    os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'student_management_system.settings')
+    #os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'student_management_system.settings')
+    settings_module = 'student_management_system.deployment' if 'WEBSITE_HOSTNAME' in os.environ else 'student_management_system.settings'
+
+    os.environ.setdefault('DJANGO_SETTINGS_MODULE', settings_module)
     try:
         from django.core.management import execute_from_command_line
     except ImportError as exc:
