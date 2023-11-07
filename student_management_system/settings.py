@@ -66,12 +66,30 @@ WSGI_APPLICATION = 'student_management_system.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.0/ref/settings/#databases
 
+#DATABASES = {
+   # 'default': {
+    #    'ENGINE': 'django.db.backends.sqlite3',
+   #     'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+    #}
+#}
 DATABASES = {
+    # 'default': {
+    #     'ENGINE': 'django.db.backends.sqlite3',
+    #     'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+    # }
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-    }
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'sms',
+        'USER': 'postgres',
+        #'PASSWORD': 'Vuba_vuba2023',
+        'PASSWORD': 'clemence19A',
+        'HOST': 'localhost',  # If your PostgreSQL server is on the same machine
+        'PORT': '5432',  # Default PostgreSQL port is 5432
+       
+    # Other database connections...
 }
+}
+
 
 
 # Password validation
